@@ -723,6 +723,11 @@ boost_write(struct cgroup_subsys_state *css, struct cftype *cft,
 }
 
 #ifdef CONFIG_STUNE_ASSIST
+bool task_is_booster(struct task_struct *p)
+{
+	return false;
+}
+
 #ifdef CONFIG_SCHED_WALT
 static int sched_boost_override_write_wrapper(struct cgroup_subsys_state *css,
 					      struct cftype *cft, u64 override)
@@ -760,9 +765,26 @@ static int prefer_idle_write_wrapper(struct cgroup_subsys_state *css,
 
 	return prefer_idle_write(css, cft, prefer_idle);
 }
+#else
+/* Stub functions when CONFIG_STUNE_ASSIST is not enabled */
+static int boost_write_wrapper(struct cgroup_subsys_state *css,
+			       struct cftype *cft, s64 boost)
+{
+	return boost_write(css, cft, boost);
+}
+
+static int prefer_idle_write_wrapper(struct cgroup_subsys_state *css,
+				     struct cftype *cft, u64 prefer_idle)
+{
+	return prefer_idle_write(css, cft, prefer_idle);
+}
 #endif
 
 #ifdef OPLUS_FEATURE_POWER_CPUFREQ
+#ifndef WINDOW_STATS_INVALID_POLICY
+#define WINDOW_STATS_INVALID_POLICY	4
+#endif
+
 unsigned int schedtune_window_policy(struct task_struct *p)
 {
 	struct schedtune *st;

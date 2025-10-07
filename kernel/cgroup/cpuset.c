@@ -30,6 +30,7 @@
 #include <linux/errno.h>
 #include <linux/file.h>
 #include <linux/fs.h>
+#include "../sched/tune.h"
 #include <linux/init.h>
 #include <linux/interrupt.h>
 #include <linux/kernel.h>

@@ -27,6 +27,12 @@ unsigned int uclamp_top_task_filter(struct task_struct *p);
 unsigned int uclamp_ed_task_filter(struct task_struct *p);
 #endif
 
+#ifdef CONFIG_STUNE_ASSIST
+bool task_is_booster(struct task_struct *p);
+#else
+static inline bool task_is_booster(struct task_struct *p) { return false; }
+#endif
+
 #else /* CONFIG_SCHED_TUNE */
 
 #define schedtune_cpu_boost_with(cpu, p)  0

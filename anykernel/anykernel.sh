@@ -4,18 +4,18 @@
 ### AnyKernel setup
 # begin properties
 properties() { '
-kernel.string=phoeniX Kernel by Ryuk
+kernel.string=Realme GT Neo 2 / Realme X50 Pro Z 0 R 0 K
 do.devicecheck=0
 do.modules=0
 do.systemless=1
 do.cleanup=1
 do.cleanuponabort=0
 device.name1=RMX3370
-device.name2=RMX3371
-device.name3=
-device.name4=
-device.name5=
-supported.versions=12-16
+device.name2=RMX2071
+device.name3=RMX2076
+device.name4=RMX2075
+device.name5=RMX2072
+supported.versions=
 supported.patchlevels=
 '; } # end properties
 

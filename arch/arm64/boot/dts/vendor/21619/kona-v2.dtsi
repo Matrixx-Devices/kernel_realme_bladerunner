@@ -6,44 +6,20 @@
 	qcom,msm-id = <356 0x20000>;
 };
 
-&CPU0 {
-	capacity-dmips-mhz = <448>;
-	dynamic-power-coefficient = <49>;
-};
-
-&CPU1 {
-	capacity-dmips-mhz = <448>;
-	dynamic-power-coefficient = <49>;
-};
-
-&CPU2 {
-	capacity-dmips-mhz = <448>;
-	dynamic-power-coefficient = <49>;
-};
-
-&CPU3 {
-	capacity-dmips-mhz = <448>;
-	dynamic-power-coefficient = <49>;
-};
-
 &CPU4 {
-	capacity-dmips-mhz = <1024>;
-	dynamic-power-coefficient = <91>;
+	dynamic-power-coefficient = <533>;
 };
 
 &CPU5 {
-	capacity-dmips-mhz = <1024>;
-	dynamic-power-coefficient = <91>;
+	dynamic-power-coefficient = <533>;
 };
 
 &CPU6 {
-	capacity-dmips-mhz = <1024>;
-	dynamic-power-coefficient = <91>;
+	dynamic-power-coefficient = <533>;
 };
 
 &CPU7 {
-	capacity-dmips-mhz = <1023>;
-	dynamic-power-coefficient = <134>;
+	dynamic-power-coefficient = <642>;
 };
 
 &clock_camcc {
@@ -407,11 +383,4 @@
 				800000000>;
 		};
 	};
-};
-
-&cpufreq_hw {
-	interrupts = <GIC_SPI 30 IRQ_TYPE_LEVEL_HIGH>,
-		   <GIC_SPI 31 IRQ_TYPE_LEVEL_HIGH>,
-		   <GIC_SPI 19 IRQ_TYPE_LEVEL_HIGH>;
-	interrupt-names = "dcvsh0_int", "dcvsh1_int", "dcvsh2_int";
 };
